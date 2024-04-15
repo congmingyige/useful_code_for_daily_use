@@ -70,16 +70,31 @@ void regex_change_file(string path_old, string path_new, string regex_old, strin
 int main(int argc, char *argv[])
 {
     string cb_version="20.03";
-    string path_out_dir = "E:/scientific/sci_code/cpp/codeblocks_create_project_auto_test_1";
-    string code_muban_path = "E:/scientific/sci_code/cpp/for_codeblocks_create_project/main.cpp";
-    string path_old_cbp = "E:/scientific/sci_code/cpp/for_codeblocks_create_project/for_codeblocks_create_project.cbp";
-    string path_old_layout = "E:/scientific/sci_code/cpp/for_codeblocks_create_project/for_codeblocks_create_project.layout";
+
+    ///改
+    //string path_out_dir = "C:/Users/congm/OneDrive/code_competition/ABC349/";
+
+    ///G813
+    string path_out_dir = "C:/Users/chenguanbin/OneDrive/code_competition/ABC350/";
+
+    ///改
+    //string project_dir = "C:/Users/congm/OneDrive/code_competition/_auto_create_multiply_CodeBlocks_project";
+
+    //G813
+    string project_dir = "C:/Users/chenguanbin/OneDrive/code_competition/_auto_create_multiply_CodeBlocks_project";
+
+    ///基本不用改
+    string muban_name = "muban1";
+    string muban_cpp = project_dir + "/" + muban_name + "/" + "main.cpp";
+
+    string muban_cbp = project_dir + "/" + muban_name + "/" + muban_name + ".cbp";
+    string muban_layout = project_dir + "/" + muban_name + "/" + muban_name + ".layout";
 
     string path_out_dir_2;
     char path_temp[300];
-    int project_name_mode=1, l1=1,r1=3;
-    char l2='A',r2='C';
-    bool add_test_project = 1;
+    int project_name_mode=2, l1=1,r1=3; ///project_name_mode=2 决定文件名是A-G还是1-7
+    char l2='A',r2='G';
+    bool add_test_project = 1;  //是否每个文件都加入test_xxx
 
     assert(argc == 1 || argc == 4);
     if (argc == 4)
@@ -98,24 +113,33 @@ int main(int argc, char *argv[])
             l1 = atoi(argv[2]);
             r1 = atoi(argv[3]);
         }
-        cout << path_out_dir << endl;
+
+        /*
+        cout << "project_name_mode = " << path_out_dir << endl;
         cout << project_name_mode << endl;
         if (project_name_mode==1)
             cout << l1 << " " << r1 << endl;
         else if (project_name_mode==2)
             cout << l2 << " " << r2 << endl;
+        */
         //exit(1);
     }
 
     //_getcwd(path_temp, 256); cout << path_temp << endl; exit(1);
 
-    string path_old_project_name = path_old_cbp.substr(path_old_cbp.rfind("/")+1, path_old_cbp.length()-4-path_old_cbp.rfind("/")-1);
+    string muban_project_name = muban_cbp.substr(muban_cbp.rfind("/")+1, muban_cbp.length()-4-muban_cbp.rfind("/")-1);
     path_out_dir = path_out_dir + "/";
     _mkdir(path_out_dir.c_str());
     if (project_name_mode==1)
         set_vector_string(l1,r1);
     else if (project_name_mode==2)
         set_vector_string_character(l2,r2);
+
+    cout<<"sereval names = ";
+    for (auto temp:list_project_name)
+        cout<<temp<<" ";
+    cout<<endl;
+    cout<<endl<<endl<<endl<<endl<<endl;
 
     if (add_test_project)
     {
@@ -124,19 +148,22 @@ int main(int argc, char *argv[])
             list_project_name.push_back("test_" + d);
     }
 
+    cout<<"output path = "<<path_out_dir<<endl;
 
     for (string project_name:list_project_name)
     {
         path_out_dir_2 = path_out_dir + project_name + "/";
+
+
         _mkdir(path_out_dir_2.c_str());
         _mkdir((path_out_dir_2 + "/obj").c_str());
         _mkdir((path_out_dir_2 + "/obj/Debug").c_str());
         _mkdir((path_out_dir_2 + "/bin").c_str());
         _mkdir((path_out_dir_2 + "/bin/Debug").c_str());
 
-        system(regex_replace("copy "+ code_muban_path + " " + path_out_dir_2 + "/main.cpp", regex("/"), "\\").c_str());
-        regex_change_file(path_old_cbp, path_out_dir_2 + project_name + ".cbp" , path_old_project_name, project_name);
-        regex_change_file(path_old_layout, path_out_dir_2 + project_name + ".layout", path_old_project_name, project_name);
+        system(regex_replace("copy "+ muban_cpp + " " + path_out_dir_2 + "/main.cpp", regex("/"), "\\").c_str());
+        regex_change_file(muban_cbp, path_out_dir_2 + project_name + ".cbp" , muban_project_name, project_name);
+        regex_change_file(muban_layout, path_out_dir_2 + project_name + ".layout", muban_project_name, project_name);
 
         //exit(1);
 

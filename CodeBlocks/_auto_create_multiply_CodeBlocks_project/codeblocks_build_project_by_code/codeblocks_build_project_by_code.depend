@@ -1,0 +1,50 @@
+# depslib dependency file v1.0
+1650876027 source:e:\scientific\sci_code\cpp\algo_problem\codeblocks_build_project_by_code\main.cpp
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<cmath>
+	<string>
+	<algorithm>
+	<iostream>
+	<direct.h>
+	<string>
+	<sstream>
+	<vector>
+	<fstream>
+	<regex>
+
+1651291667 source:c:\users\congm\onedrive\code_competition\_auto_create_multiply_codeblocks_project\codeblocks_build_project_by_code\main.cpp
+	<assert.h>
+	<direct.h>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<cmath>
+	<string>
+	<algorithm>
+	<iostream>
+	<direct.h>
+	<string>
+	<sstream>
+	<vector>
+	<fstream>
+	<regex>
+
+1713008635 source:c:\users\chenguanbin\onedrive\code_competition\_auto_create_multiply_codeblocks_project\codeblocks_build_project_by_code\main.cpp
+	<assert.h>
+	<direct.h>
+	<cstdio>
+	<cstdlib>
+	<cstring>
+	<cmath>
+	<string>
+	<algorithm>
+	<iostream>
+	<direct.h>
+	<string>
+	<sstream>
+	<vector>
+	<fstream>
+	<regex>
+

@@ -4,7 +4,18 @@
   - auto create/build several CodeBlocks Project, for programming competition and so on.
 
 - 优点
-  - .layout，设置了一开始的鼠标位置
+  - layout文件，设置了一开始的鼠标位置
+
+## 操作
+  - 选择你要用的模板项目文件名，默认为muban_name="muban1"。修改muban1里面的main.cpp文件，即你的main.cpp代码。也可以直接用"#include <bits/stdc++.h>"。
+  - 选择项目文件名，文件名是从l2变量到r2变量，默认是A-G。也可以设置文件名为数目，这样要设置project_name_mode=1，然后文件名从l2变量到r2变量
+
+
+
+
+
+
+# 这是之前写的内容
 
 - 输入
   - way1: 在程序里修改
