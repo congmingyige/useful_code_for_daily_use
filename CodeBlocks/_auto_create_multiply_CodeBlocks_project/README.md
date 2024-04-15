@@ -7,8 +7,10 @@
   - layout文件，设置了一开始的鼠标位置
 
 ## 操作
-  - 选择你要用的模板项目文件名，默认为muban_name="muban1"。修改muban1里面的main.cpp文件，即你的main.cpp代码。也可以直接用"#include <bits/stdc++.h>"。
-  - 选择项目文件名，文件名是从l2变量到r2变量，默认是A-G。也可以设置文件名为数目，这样要设置project_name_mode=1，然后文件名从l2变量到r2变量
+  对于codeblocks_build_project_by_code里的main.cpp
+  - 选择你要用的模板cbp文件名，默认为muban_name="muban1"。muban1文件夹里的main.cpp已经写好。修改muban1里面的main.cpp文件，即你的main.cpp代码。也可以自行修改，比如直接用"#include <bits/stdc++.h>"。
+  - 选择这些cbp的文件名，文件名是从l2变量到r2变量，默认是A-G。也可以设置文件名为数目，这样要设置project_name_mode=1，然后文件名从l2变量到r2变量。
+  - 选择这些cbp的输出路径，它在project_dir变量里。
 
 
 
